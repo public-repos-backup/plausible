@@ -4,22 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.31.1">
+    <meta name="generator" content="ExDoc v0.35.1">
     <meta name="project" content="Plausible v0.0.1">
 
 
     <title>PlausibleWeb.UserAuth — Plausible v0.0.1</title>
-    <link rel="stylesheet" href="dist/html-elixir-FM2CSD74.css" />
+    <link rel="stylesheet" href="dist/html-elixir-P45HOAC7.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
-    <script src="dist/handlebars.templates-43PMFBC7.js"></script>
-    <script src="dist/sidebar_items-7C6BA389.js"></script>
-
-      <script src="docs_config.js"></script>
-
-    <script async src="dist/html-L4O5OK2K.js"></script>
-
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-1C8A9F73.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-PVRIOB7F.js"></script>
 
   </head>
   <body data-type="modules" class="page-module">
@@ -37,13 +34,11 @@
       } catch (error) { }
     </script>
 
-<div class="main">
+<div class="body-wrapper">
 
 <button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
   <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
 </button>
-
-<div class="background-layer"></div>
 
 <nav id="sidebar" class="sidebar">
 
@@ -103,57 +98,50 @@ Pages
 
 <main class="content">
   <output role="status" id="toast"></output>
-  <div class="content-outer">
-    <div id="content" class="content-inner">
-      <div class="top-search">
-        <div class="search-settings">
-          <form class="search-bar" action="search.html">
-            <label class="search-label">
-              <span class="sr-only">Search documentation of Plausible</span>
-              <input name="q" type="text" class="search-input" placeholder="Search Documentation (press /)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-            </label>
-            <button type="submit" class="search-button" aria-label="Submit Search">
-              <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
-            </button>
-            <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-              <i class="ri-close-line ri-lg" title="Cancel search"></i>
-            </button>
-          </form>
-          <div class="autocomplete">
-          </div>
-          <button class="icon-settings display-settings">
-            <i class="ri-settings-3-line"></i>
-            <span class="sr-only">Settings</span>
+
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Plausible</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
           </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
         </div>
-
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
       </div>
+    </div>
 
-<h1>
+<div id="top-content">
+  <h1>
 
-    <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L1" title="View Source" class="icon-action" rel="help">
-      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-      <span class="sr-only">View Source</span>
-    </a>
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
 
-  <span translate="no">PlausibleWeb.UserAuth</span> 
-  <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
+    <span translate="no">PlausibleWeb.UserAuth</span> 
+    <small class="app-vsn" translate="no">(Plausible v0.0.1)</small>
 
-</h1>
+  </h1>
 
 
-  <section id="moduledoc">
-<p>Functions for user session management.</p><p>In it's current shape, both current (legacy) and soon to be implemented (new)
-user sessions are supported side by side.</p><p>Once the token-based sessions are implemented, <code class="inline">create_user_session/1</code> will
-start returning new token instead of the legacy one. At the same time,
-<code class="inline">put_token_in_session/2</code> will always set the new token. The legacy token will
-still be accepted from the session cookie. Once 14 days pass (the current time
-window for which session cookie is valid without any activity), the legacy
-cookies won't be accepted anymore (token retrieval will most likely be
-instrumented to confirm the usage falls in the mentioned time window as
-expected) and the logic will be cleaned of branching for legacy session.</p>
-  </section>
+    <section id="moduledoc">
+<p>Functions for user session management.</p>
+    </section>
 
+</div>
 
   <section id="summary" class="details-list">
     <h1 class="section-heading">
@@ -162,6 +150,20 @@ expected) and the logic will be cleaned of branching for legacy session.</p>
       </a>
       <span class="text">Summary</span>
     </h1>
+<div class="summary-types summary">
+  <h2>
+    <a href="#types">Types</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:login_subject/0" data-no-tooltip translate="no">login_subject()</a>
+
+      </div>
+
+    </div>
+
+</div>
 <div class="summary-functions summary">
   <h2>
     <a href="#functions">Functions</a>
@@ -169,7 +171,7 @@ expected) and the logic will be cleaned of branching for legacy session.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_user/1" translate="no">get_user(user_session)</a>
+        <a href="#get_user_session/1" data-no-tooltip translate="no">get_user_session(conn_or_session)</a>
 
       </div>
 
@@ -177,7 +179,7 @@ expected) and the logic will be cleaned of branching for legacy session.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#get_user_session/1" translate="no">get_user_session(conn_or_session)</a>
+        <a href="#log_in_user/3" data-no-tooltip translate="no">log_in_user(conn, subject, redirect_path \\ nil)</a>
 
       </div>
 
@@ -185,7 +187,7 @@ expected) and the logic will be cleaned of branching for legacy session.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#log_in_user/3" translate="no">log_in_user(conn, user, redirect_path \\ nil)</a>
+        <a href="#log_out_user/1" data-no-tooltip translate="no">log_out_user(conn)</a>
 
       </div>
 
@@ -193,7 +195,7 @@ expected) and the logic will be cleaned of branching for legacy session.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#log_out_user/1" translate="no">log_out_user(conn)</a>
+        <a href="#revoke_all_user_sessions/2" data-no-tooltip translate="no">revoke_all_user_sessions(user, opts \\ [])</a>
 
       </div>
 
@@ -201,7 +203,15 @@ expected) and the logic will be cleaned of branching for legacy session.</p>
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#set_logged_in_cookie/1" translate="no">set_logged_in_cookie(conn)</a>
+        <a href="#revoke_user_session/2" data-no-tooltip translate="no">revoke_user_session(user, session_id)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#set_logged_in_cookie/1" data-no-tooltip translate="no">set_logged_in_cookie(conn)</a>
 
       </div>
 
@@ -210,31 +220,37 @@ whether client is authenticated.</p></div>
 
     </div>
 
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#touch_user_session/2" data-no-tooltip translate="no">touch_user_session(user_session, now \\ NaiveDateTime.utc_now(:second))</a>
+
+      </div>
+
+    </div>
+
 </div>
 
   </section>
 
 
-  <section id="functions" class="details-list">
+  <section id="types" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#functions">
+      <a class="hover-link" href="#types">
         <i class="ri-link-m" aria-hidden="true"></i>
       </a>
-      <span class="text">Functions</span>
+      <span class="text">Types</span>
     </h1>
-    <div class="functions-list">
-<section class="detail" id="get_user/1">
+    <div class="types-list">
+<section class="detail" id="t:login_subject/0">
 
   <div class="detail-header">
-    <a href="#get_user/1" class="detail-link" title="Link to this function">
+    <a href="#t:login_subject/0" class="detail-link" data-no-tooltip aria-label="Link to this type">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">get_user(user_session)</h1>
+    <h1 class="signature" translate="no">login_subject()</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L52" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L19" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -244,27 +260,35 @@ whether client is authenticated.</p></div>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> get_user(<a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>() | <a href="Plausible.Auth.UserSession.html#t:t/0">Plausible.Auth.UserSession.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, <a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>()}
-  | {:error, :no_valid_token | :session_not_found | :user_not_found}</pre>
+          <pre translate="no"><span class="attribute">@type</span> login_subject() :: <a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>() | <a href="Plausible.Auth.SSO.Identity.html#t:t/0">Plausible.Auth.SSO.Identity.t</a>()</pre>
 
       </div>
 
 
   </section>
 </section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
 <section class="detail" id="get_user_session/1">
 
   <div class="detail-header">
-    <a href="#get_user_session/1" class="detail-link" title="Link to this function">
+    <a href="#get_user_session/1" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">get_user_session(conn_or_session)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L68" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L96" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -275,7 +299,8 @@ whether client is authenticated.</p></div>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@spec</span> get_user_session(<a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) ::
-  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()} | {:error, :no_valid_token | :session_not_found}</pre>
+  {:ok, <a href="Plausible.Auth.UserSession.html#t:t/0">Plausible.Auth.UserSession.t</a>()}
+  | {:error, :no_valid_token | :session_not_found}</pre>
 
       </div>
 
@@ -287,15 +312,13 @@ whether client is authenticated.</p></div>
     <span id="log_in_user/2"></span>
 
   <div class="detail-header">
-    <a href="#log_in_user/3" class="detail-link" title="Link to this function">
+    <a href="#log_in_user/3" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">log_in_user(conn, user, redirect_path \\ nil)</h1>
+    <h1 class="signature" translate="no">log_in_user(conn, subject, redirect_path \\ nil)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L24" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L26" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -305,8 +328,7 @@ whether client is authenticated.</p></div>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@spec</span> log_in_user(<a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(), <a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil) ::
-  <a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()</pre>
+          <pre translate="no"><span class="attribute">@spec</span> log_in_user(<a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>(), <a href="#t:login_subject/0">login_subject</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>() | nil) :: <a href="https://hexdocs.pm/plug/1.16.1/Plug.Conn.html#t:t/0">Plug.Conn.t</a>()</pre>
 
       </div>
 
@@ -316,15 +338,13 @@ whether client is authenticated.</p></div>
 <section class="detail" id="log_out_user/1">
 
   <div class="detail-header">
-    <a href="#log_out_user/1" class="detail-link" title="Link to this function">
+    <a href="#log_out_user/1" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">log_out_user(conn)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L35" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L79" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -341,18 +361,70 @@ whether client is authenticated.</p></div>
 
   </section>
 </section>
+<section class="detail" id="revoke_all_user_sessions/2">
+
+    <span id="revoke_all_user_sessions/1"></span>
+
+  <div class="detail-header">
+    <a href="#revoke_all_user_sessions/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">revoke_all_user_sessions(user, opts \\ [])</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L141" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> revoke_all_user_sessions(<a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: :ok</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="revoke_user_session/2">
+
+  <div class="detail-header">
+    <a href="#revoke_user_session/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">revoke_user_session(user, session_id)</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L121" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> revoke_user_session(<a href="Plausible.Auth.User.html#t:t/0">Plausible.Auth.User.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: :ok</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="set_logged_in_cookie/1">
 
   <div class="detail-header">
-    <a href="#set_logged_in_cookie/1" class="detail-link" title="Link to this function">
+    <a href="#set_logged_in_cookie/1" class="detail-link" data-no-tooltip aria-label="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
     </a>
     <h1 class="signature" translate="no">set_logged_in_cookie(conn)</h1>
 
-      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L82" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L168" class="icon-action" rel="help" aria-label="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
      </a>
 
 
@@ -371,38 +443,66 @@ whether client is authenticated.</p><p>As it's a separate cookie, there's a chan
 with session cookie state due to manual deletion or premature expiration.</p>
   </section>
 </section>
+<section class="detail" id="touch_user_session/2">
+
+    <span id="touch_user_session/1"></span>
+
+  <div class="detail-header">
+    <a href="#touch_user_session/2" class="detail-link" data-no-tooltip aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <h1 class="signature" translate="no">touch_user_session(user_session, now \\ NaiveDateTime.utc_now(:second))</h1>
+
+      <a href="https://github.com/plausible/analytics/blob/main/lib/plausible_web/user_auth.ex#L107" class="icon-action" rel="help" aria-label="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> touch_user_session(<a href="Plausible.Auth.UserSession.html#t:t/0">Plausible.Auth.UserSession.t</a>(), <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>()) ::
+  <a href="Plausible.Auth.UserSession.html#t:t/0">Plausible.Auth.UserSession.t</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
 
     </div>
   </section>
 
-      <footer class="footer">
-        <p>
+    <footer class="footer">
+      <p>
 
-          <span class="line">
-            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-              Search HexDocs
-            </button>
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
 
-              <a href="Plausible.epub" title="ePub version">
-                Download ePub version
-              </a>
+            <a href="Plausible.epub" title="ePub version">
+              Download ePub version
+            </a>
 
-          </span>
-        </p>
+        </span>
+      </p>
 
-        <p class="built-using">
-          Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.31.1) for the
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.35.1) for the
 
-            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
 
-        </p>
-      </footer>
-    </div>
+      </p>
+
+    </footer>
   </div>
 </main>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad: true})</script>
 
